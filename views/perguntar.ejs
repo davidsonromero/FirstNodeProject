@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('./partials/header.ejs') %>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntas e Respostas</title>
+</head>
+<body class="">
+    <div class="p-3">
+        <%- include('./partials/navbar.ejs') %>
+        <% if(error){ %>
+        <div class="alert alert-danger mt-5" role="alert">
+            Erro ao salvar a pergunta! Tente novamente.
+          </div>
+        <% } %>
+    </div>
+    <div class="container p-3">
+        <div class="card border-0 rounded mt-3">
+            <div class="card-header border-0 bg-info">
+                <h3>Realizar Pergunta</h3>
+            </div>
+            <div class="card-body border border-info rounded-bottom bg-dark">
+                <form action="/salvar-pergunta" method="post">
+                    <label for="">Título</label>
+                    <input type="text" name="titulo" class="form-control" placeholder="Título"><br>
+                    <label for="">Pergunta</label>
+                    <textarea placeholder="Escreva sua pergunta" name="pergunta" id="" cols="30" rows="7" class="form-control"></textarea><br>
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-outline-info">Perguntar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
